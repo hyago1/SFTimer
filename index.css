@@ -3,12 +3,33 @@ body{
 display: flex;
 margin: 0%;
 background-color: #03071f;
+scrollbar-width: thin;
 
 }
-table{
-	color: aliceblue;
+.timesOverFlow{
+	display: flex;
+	align-items: center	;
+	width: 100%;
+	height: 80%;
+	overflow:auto;
+	margin-inline: 5px;
+	scrollbar-width: thin;       
 }
-.times{
+#times {
+
+	width: 80%;
+	height: 100%;
+	list-style: none;
+	color: rgba(240, 248, 255, 0.795);
+	font-family: 'Rajdhani', sans-serif;
+	font-size: 20px;
+	
+}
+
+.times {
+	display: flex;
+	flex-direction: column;	
+	align-items: center;
 	padding: 10px;
 	width: 15em;
 	height: 95vh;
@@ -18,6 +39,7 @@ table{
 }
 
 .maintimer{
+	z-index: -1;
 	position: absolute;
 	width: 100%;
 	height: 100vh;
@@ -29,7 +51,6 @@ table{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
 	width: 300px;
 	height: 200px;
 	border-radius: 20px;
@@ -42,7 +63,13 @@ table{
 
 	
 }
+p{
+	margin: 0 0 40px 0;
 
+	color:  rgb(196, 196, 196);
+	font-size: 50px;
+	font-family: 'Rajdhani', sans-serif;
+}
 span{
 	font-size: 100px;
 	font-family: 'Rajdhani', sans-serif;

@@ -4,7 +4,8 @@
 		var s = 0;
         var min = 0;
         var timeStoped = "";
-        var solves = ["dde","dewdw","rdfewf"];
+        var solves = new Array();
+        solves.length = 100;
        
         window.onkeyup = play;
             function play() {
@@ -64,14 +65,32 @@
             function getTime() {
         timeStoped = min+":"+s+":"+ml;
                 for (let index = 0; index < solves.length; index++) {
-                  
-                    solves[index] = timeStoped;
+                  if (solves[index] == null) {
+                                solves[index] = timeStoped;
+                                break;
+                  }
+          
                   
                
                   
-                    console.log(solves[index])
+                    console.log(solves)
 
                 }
-                timeStoped = 0;
+                timeStoped = "";
+
+                var table = document.getElementById("times");// sugestão, coloque um id na tabela para usar getElementById.
+
+
+// limpar tbody
+
+table.innerHTML="";
+for(var i=0; i< solves.length; i++){
+    if (solves[i] != null) {
+        
+           table.innerHTML += "<li>"+solves[i]+"</li>";   
+          
+    }
+                       
+}
                 
         }
