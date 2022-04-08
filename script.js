@@ -6,7 +6,7 @@
         var timeStoped = "";
         var solves = new Array();
         solves.length = 100;
-       
+       var startTime; 
         window.onkeyup = play;
             function play() {
                 document.getElementsByClassName(".time").co

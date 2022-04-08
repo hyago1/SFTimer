@@ -3,21 +3,21 @@ body{
 display: flex;
 margin: 0%;
 background-color: #03071f;
-scrollbar-width: thin;
+
 
 }
 .timesOverFlow{
 	display: flex;
 	align-items: center	;
 	width: 100%;
-	height: 80%;
-	overflow:auto;
+	height: 77%;
+	overflow-y:scroll;
 	margin-inline: 5px;
 	scrollbar-width: thin;       
 }
 #times {
 
-	width: 80%;
+	width: 100%;
 	height: 100%;
 	list-style: none;
 	color: rgba(240, 248, 255, 0.795);
@@ -51,8 +51,9 @@ scrollbar-width: thin;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 300px;
+	width: 30%;
 	height: 200px;
+
 	border-radius: 20px;
 	
 }
@@ -64,8 +65,7 @@ scrollbar-width: thin;
 	
 }
 p{
-	margin: 0 0 40px 0;
-
+	margin: 20px 0 40px 0;
 	color:  rgb(196, 196, 196);
 	font-size: 50px;
 	font-family: 'Rajdhani', sans-serif;
@@ -75,6 +75,11 @@ span{
 	font-family: 'Rajdhani', sans-serif;
 	color: rgb(196, 196, 196);
 }
+::-webkit-scrollbar {
+    width: 5px;
+  background-color: #77777744;
+}
+
 @media (max-width: 100px)
 {
 	.times{
