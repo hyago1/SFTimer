@@ -49,10 +49,6 @@ function updateTime() {
 
 
 
-let ultimoId = 0;
-const scroll = (id) => {
-  document.getElementById(id).scrollIntoView();
-};
 
 
 function getTime() {
@@ -76,10 +72,9 @@ function getTime() {
 
   for (var i = 0; i < solves.length; i++) {
     if (solves[i] != null) {
-      table.innerHTML += `<li id="${ultimoId}">${solves[i]}</li>`;
+      table.innerHTML += `<li id="${i}">${solves[i]}</li>`;
     }
   }
-  
-  scroll(ultimoId);
-  ultimoId++;
+  document.getElementById('times').lastChild.scrollIntoView();
+
 }
