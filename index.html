@@ -12,10 +12,16 @@
 
 
 </head>
-<body onclick="play()">
+<body >
 
 	<div class="times" >
 	<p>Times</p>
+	<div id="averages">	
+<span class="threeaverage">Media de 3: </span>
+<span class="fiveaverage">Media de 5: </span>
+<span class="fivetenaverage">Media de 15: </span>
+
+	</div>
 	<div class="timesOverFlow">
         <ul id="times">
 			
@@ -27,10 +33,10 @@
 	<div class="maintimer">
 		<div id = "scram"></div>
 
-		<div class="timer" >
+		<div class="timer"   onclick="play()">
 			<div class="time">
-		
-			<span id="min">00</span>
+	
+			<span id="min">0</span>
 			<span>.</span>
 		
 			<span id="s">00</span>

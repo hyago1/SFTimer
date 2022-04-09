@@ -5,7 +5,9 @@ var s = 0;
 var min = 0;
 var timeStoped = "";
 var solves = new Array();
-solves.length = 100;
+solves.length = 1000;
+var average3 = new Array();
+average3.length = 3;
 var startTime;
 window.onkeyup = play;
 function play() {
@@ -31,6 +33,7 @@ function play() {
     }, 10);
     s = 0;
     ml = 0;
+    min = 0;
   } else {
     clearTimeout(time);
     run = false;
@@ -55,8 +58,13 @@ function getTime() {
   timeStoped = min + ":" + s + ":" + ml;
 
   for (let index = 0; index < solves.length; index++) {
-    if (solves[index] == null) {
+    if (solves[index] == null ) {
+      
       solves[index] = timeStoped;
+      
+      if (average3[index] == null) {
+        average3[index] = timeStoped;
+      }
       break;
     }
 
@@ -77,4 +85,19 @@ function getTime() {
   }
   document.getElementById('times').lastChild.scrollIntoView();
 
+  // average();
+
 }
+// function average() {
+//   function ArrayAvg(average3) {
+//     var i = 0, summ = 0, ArrayLen = average3.length;
+//     while (i < ArrayLen) {
+//         summ = summ + average3[i++];
+// }
+//     return summ / ArrayLen;
+// }
+// var a = ArrayAvg(average3);
+// console.log(a)
+// var threeaverage = document.getElementById("average");
+// threeaverage.innerHTML += `<span class="threeaverage">${a}</span>`;
+// }
