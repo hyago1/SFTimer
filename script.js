@@ -10,6 +10,7 @@ var average3 = new Array();
 average3.length = 3;
 var startTime;
 window.onkeyup = play;
+
 function play() {
   document.getElementsByClassName(".time").co;
   if (run == false) {
@@ -47,57 +48,43 @@ function updateTime() {
   document.getElementById("s").innerHTML = s;
   document.getElementById("min").innerHTML = min;
 
-  getTime();
+  addTimeInArray();
 }
 
-
-
-
-
-function getTime() {
+function addTimeInArray() {
   timeStoped = min + ":" + s + ":" + ml;
 
   for (let index = 0; index < solves.length; index++) {
-    if (solves[index] == null ) {
-      
+    if (solves[index] == null) {
       solves[index] = timeStoped;
-      
+
       if (average3[index] == null) {
         average3[index] = timeStoped;
       }
+
       break;
     }
-
-    console.log(solves);
   }
+
   timeStoped = "";
 
+  showTimes();
+}
+
+function showTimes() {
   var table = document.getElementById("times");
 
   table.innerHTML = "";
- 
-  
 
   for (var i = 0; i < solves.length; i++) {
     if (solves[i] != null) {
-      table.innerHTML += `<li id="${i}">${solves[i]}</li>`;
+      table.innerHTML += `<li id="${i}">${solves[i]}  <img class="iconDelete" onclick="deleteTime(${i})" src="./images/delete.svg" alt="" srcset=""></li>`;
     }
   }
-  document.getElementById('times').lastChild.scrollIntoView();
-
-  // average();
-
+  document.getElementById("times").lastChild.scrollIntoView();
 }
-// function average() {
-//   function ArrayAvg(average3) {
-//     var i = 0, summ = 0, ArrayLen = average3.length;
-//     while (i < ArrayLen) {
-//         summ = summ + average3[i++];
-// }
-//     return summ / ArrayLen;
-// }
-// var a = ArrayAvg(average3);
-// console.log(a)
-// var threeaverage = document.getElementById("average");
-// threeaverage.innerHTML += `<span class="threeaverage">${a}</span>`;
-// }
+
+function deleteTime(id) {
+  solves.splice(id, 1);
+  showTimes();
+}
