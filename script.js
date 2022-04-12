@@ -9,6 +9,7 @@ solves.length = 1000;
 var average3 = new Array();
 average3.length = 3;
 var startTime;
+var record = "";
 window.onkeyup = play;
 
 function play() {
@@ -16,6 +17,8 @@ function play() {
   if (run == false) {
     time = setInterval(function () {
       ml++;
+  
+     
       run = true;
       document.getElementById("ml").innerHTML = ml;
 
@@ -24,14 +27,18 @@ function play() {
       if (ml == 99) {
         ml = 0;
         s++;
+      
+        
         document.getElementById("s").innerHTML = s;
       }
       if (s == 59) {
         s = 0;
         min++;
+
         document.getElementById("min").innerHTML = min;
       }
     }, 10);
+
     s = 0;
     ml = 0;
     min = 0;
@@ -52,6 +59,7 @@ function updateTime() {
 }
 
 function addTimeInArray() {
+
   timeStoped = min + ":" + s + ":" + ml;
 
   for (let index = 0; index < solves.length; index++) {
@@ -73,11 +81,16 @@ function addTimeInArray() {
 
 function showTimes() {
   var table = document.getElementById("times");
-
+  var solve = document.getElementById("numSolves");
+  var numberSolves = 0;
+ 
   table.innerHTML = "";
 
+  console.log(record);
   for (var i = 0; i < solves.length; i++) {
     if (solves[i] != null) {
+      numberSolves++;
+      solve.innerHTML = numberSolves;
       table.innerHTML += `<li id="${i}">${solves[i]}  <img class="iconDelete" onclick="deleteTime(${i})" src="./images/delete.svg" alt="" srcset=""></li>`;
     }
   }
@@ -87,4 +100,13 @@ function showTimes() {
 function deleteTime(id) {
   solves.splice(id, 1);
   showTimes();
+}
+
+function record() {
+  if (s <= sR) {
+    
+  }
+  record = minR + ":" + sR + ":" + mlR;
+  var recordTime = document.getElementById("recordTime");
+  recordTime.innerHTML = record;
 }
