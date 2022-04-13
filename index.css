@@ -82,6 +82,7 @@ li {
 }
 
 .iconDelete {
+  color: aqua;
   cursor: pointer;
   display: flex;
   justify-content: center;
