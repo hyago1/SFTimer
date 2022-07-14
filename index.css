@@ -3,10 +3,19 @@ body {
   margin: 0%;
   background-color: #03071f;
 }
+@media screen and (orientation: portrait) {
+  body {
+    display: flex;
+    justify-content: center;
+    margin: 0%;
+    background-color: #03071f;
+  }
+}
 .timesOverFlow {
   margin-right: 35px;
   display: flex;
   align-items: center;
+  text-align: center;
   width: 100%;
   height: 60%;
   overflow: auto;
@@ -35,7 +44,6 @@ body {
   list-style: none;
   color: rgba(240, 248, 255, 0.795);
 }
-
 .times {
   display: flex;
   flex-direction: column;
@@ -47,6 +55,21 @@ body {
   border-radius: 0 0 20px 20px;
   transition-duration: 2s;
   transition: 1s;
+}
+@media screen and (orientation: portrait) {
+  .times {
+    display: flex;
+   bottom: 0;
+   width: 95vh;
+   height: 20vh;
+  
+  }
+  .timesOverFlow {
+    width: 60%;
+    height: 60%;
+ 
+  }
+  
 }
 #nameRecord{
   font-family: "Rajdhani", sans-serif;
@@ -102,6 +125,17 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media screen and (orientation: portrait) {
+  .maintimer {
+    z-index: none;
+    position: fixed;
+  }
+  .iconDelete{
+    width: 2%;
+    height: 2%;
+  }
+ 
 }
 .timer {
   display: flex;
