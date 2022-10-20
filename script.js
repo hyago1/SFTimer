@@ -4,12 +4,11 @@ var ml = 0;
 var s = 0;
 var min = 0;
 var timeStoped = "";
-var solves = new Array();
-solves.length = 1000;
-var average3 = new Array();
-average3.length = 3;
+var solves = [];
+var average3 = [];
 var startTime;
 var record = "";
+var numberSolves = 0;
 window.onkeyup = play;
 
 function play() {
@@ -17,8 +16,8 @@ function play() {
   if (run == false) {
     time = setInterval(function () {
       ml++;
-  
-     
+
+
       run = true;
       document.getElementById("ml").innerHTML = ml;
 
@@ -27,8 +26,8 @@ function play() {
       if (ml == 99) {
         ml = 0;
         s++;
-      
-        
+
+
         document.getElementById("s").innerHTML = s;
       }
       if (s == 59) {
@@ -61,19 +60,9 @@ function updateTime() {
 function addTimeInArray() {
 
   timeStoped = min + ":" + s + ":" + ml;
-
-  for (let index = 0; index < solves.length; index++) {
-    if (solves[index] == null) {
-      solves[index] = timeStoped;
-
-      if (average3[index] == null) {
-        average3[index] = timeStoped;
-      }
-
-      break;
-    }
-  }
-
+  numberSolves++;
+  solves.push(timeStoped)
+  average3.push(timeStoped)
   timeStoped = "";
 
   showTimes();
@@ -82,15 +71,12 @@ function addTimeInArray() {
 function showTimes() {
   var table = document.getElementById("times");
   var solve = document.getElementById("numSolves");
-  var numberSolves = 0;
- 
   table.innerHTML = "";
-
   console.log(record);
+  solve.innerHTML = numberSolves;
   for (var i = 0; i < solves.length; i++) {
     if (solves[i] != null) {
-      numberSolves++;
-      solve.innerHTML = numberSolves;
+
       table.innerHTML += `<li id="${i}">${solves[i]}  <img class="iconDelete" onclick="deleteTime(${i})" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAo0lEQVRIieWTTQqDMBCFP6xb7yg9Qo/SHik3qUgXFlxWqGI3WYQ4Jc5I0NIHswnM+5lH4F9wAXpg9tP7NzVcQGIdFxIWFhcJzBk4D4Yb9vtfYzKpg2aDucWuJHDPLbAlwcJc9gQSTsAbfcEjUMZkUoIJeKi9Q+tFkgJg60Hc+SZg6UHc2S3BIQVUJ7J0oDJVAQPr/8DL76hwBp4ryDug1pL/Dj5MW2BhteGWuAAAAABJRU5ErkJggg=="/></li>`;
     }
   }
@@ -99,12 +85,14 @@ function showTimes() {
 
 function deleteTime(id) {
   solves.splice(id, 1);
+  numberSolves--;
+  console.log(numberSolves);
   showTimes();
 }
 
 function record() {
   if (s <= sR) {
-    
+
   }
   record = minR + ":" + sR + ":" + mlR;
   var recordTime = document.getElementById("recordTime");
