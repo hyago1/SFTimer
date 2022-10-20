@@ -1,3 +1,4 @@
+// var
 var time;
 var run = false;
 var ml = 0;
@@ -10,6 +11,15 @@ var startTime;
 var record = "";
 var numberSolves = 0;
 window.onkeyup = play;
+var latters = ["U","U","U2","D","D'","D2","F","F'","F2","B","B'","B2","L","L'","L2","R","R'","R2"]
+var scramble = new Array(23)
+//  var
+for (let i = 0; i < scramble.length; i++) {
+  scramble.push(latters[Math.floor(Math.random() * latters.length)])
+  
+}
+console.log();
+console.log(scramble);
 
 function play() {
   document.getElementsByClassName(".time").co;
