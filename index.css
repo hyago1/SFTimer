@@ -1,16 +1,11 @@
 body {
   display: flex;
+  justify-content: center;
   margin: 0%;
   background-color: #03071f;
+
 }
-@media screen and (orientation: portrait) {
-  body {
-    display: flex;
-    justify-content: center;
-    margin: 0%;
-    background-color: #03071f;
-  }
-}
+
 .timesOverFlow {
   margin-right: 35px;
   display: flex;
@@ -36,6 +31,11 @@ body {
 }
 
 #times {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
   margin-right: 10px;
   font-family: "Rajdhani", sans-serif;
   text-align: center;
@@ -52,25 +52,11 @@ body {
   width: 15em;
   height: 95vh;
   background-color: #091038;
-  border-radius: 0 0 20px 20px;
+  border-radius: 0 0 25px 25px;
   transition-duration: 2s;
   transition: 1s;
 }
-@media screen and (orientation: portrait) {
-  .times {
-    display: flex;
-   bottom: 0;
-   width: 95vh;
-   height: 20vh;
-  
-  }
-  .timesOverFlow {
-    width: 60%;
-    height: 60%;
- 
-  }
-  
-}
+
 #nameRecord{
   font-family: "Rajdhani", sans-serif;
   font-size: 30px;
@@ -96,11 +82,15 @@ body {
   font-size: 30px;
  }
 li {
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
   margin: 6px;
   border-radius: 10px;
   padding: 2px; 
   background-color: #131b49;
+  padding-left: 7px;
 
 }
 
@@ -112,31 +102,20 @@ li {
   position: relative;
   float: right;
   border: none;
-  width: 10%;
-  height: 10%;
+  width: 20%;
+  height: 60%;
   border-radius: 50%;
   margin: 2px;
 }
 .maintimer {
-  z-index: -1;
-  position: absolute;
+
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-@media screen and (orientation: portrait) {
-  .maintimer {
-    z-index: none;
-    position: fixed;
-  }
-  .iconDelete{
-    width: 2%;
-    height: 2%;
-  }
- 
-}
+
 .timer {
   display: flex;
   justify-content: center;
@@ -154,7 +133,7 @@ li {
 p {
   margin: 20px 0 15px 0;
   color: rgb(196, 196, 196);
-  font-size: 50px;
+  font-size: 55px;
   font-family: "Rajdhani", sans-serif;
 }
 span {
@@ -168,8 +147,47 @@ span {
   background-color: #77777744;
 }
 
-@media (max-width: 100px) {
-  .times {
-    width: 10%;
+
+
+@media screen and (orientation: portrait) {
+  
+  body{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
+
+  
+  
+  li{
+    padding: 20px;
+    width: 60%;
+    font-size: 40px
+  }
+  
+
+  .times {
+    display: flex;
+
+    width: 80%;
+   height: 30vh;
+  
+  }
+  .timesOverFlow {
+    width: 60%;
+    height: 58%;
+ 
+  }
+  .maintimer{
+    height: 65em;
+  }
+
+  .average{
+    margin-left: 9px;
+    font-size: 50px;
+  }
+  .timer span{
+    font-size: 13em;
+  }
+ 
 }
