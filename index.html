@@ -10,13 +10,13 @@
 	<link rel="manifest" href="./manifest.json"/>
 	<link rel="shortcut icon" type="png" href="./icon/android/android-launchericon-512-512.png">
 	<script src="script.js"></script>
-	<script>
-		if (typeof navigator.serviceWorker !== 'undefined') {
-		  navigator.serviceWorker.register('sw.js')
-		}
-	  </script>
-</head>
 
+</head>
+<script>
+	if (typeof navigator.serviceWorker !== 'undefined') {
+	  navigator.serviceWorker.register('sw.js')
+	}
+  </script>
 <body>
 
 	<div class="times">
