@@ -157,7 +157,9 @@ a{
 
 
 @media screen and (orientation: portrait) {
-  
+  a{
+    display: none;
+  }
   body{
     flex-direction: column;
     justify-content: center;
