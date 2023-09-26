@@ -1,48 +1,52 @@
 <!DOCTYPE html>
+
 <head>
-<title>SFTimer</title>
-<meta charset="UTF-8" content="width=device-width, initial-scale=1.0"/>
-<link rel="stylesheet" type="text/css" href="./index.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet">
-<script src="script.js"></script>
+	<title>SFTimer</title>
+	<meta charset="UTF-8" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="./index.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet">
+	<link rel="manifest" href="./manifest.json"/>
+	<link rel="shortcut icon" type="imagex/png" href="./icon/android/android-launchericon-512-512.png">
+	<script src="script.js"></script>
 </head>
-<body >
 
-	<div class="times" >
-	<p>Times</p>
-	<div id="averages">	
+<body>
 
-<span class="average">Solves: <samp class="average" id="numSolves">0</samp> </span>
+	<div class="times">
+		<p>Times</p>
+		<div id="averages">
+
+			<span class="average">Solves: <samp class="average" id="numSolves">0</samp> </span>
+
+		</div>
+		<div class="timesOverFlow">
+			<ul id="times">
+			</ul>
+		</div>
+
 
 	</div>
-	<div class="timesOverFlow">
-        <ul id="times">
-		</ul>
-	</div>
+	<div class="maintimer" onclick="play()">
+		<div id="scram"></div>
 
-		
-	</div>
-	<div class="maintimer"  onclick="play()">
-		<div id = "scram"></div>
-
-		<div class="timer"  >
+		<div class="timer">
 			<div class="time">
-			<span id="min">0</span>
-			<span>.</span>
-		
-			<span id="s">00</span>
-			<span>.</span>
-			<span id="ml">00</span>
+				<span id="min">0</span>
+				<span>.</span>
+				<span id="s">00</span>
+				<span>.</span>
+				<span id="ml">00</span>
+			</div>
+
+
+		</div>
+
+
+
+		<a href="./politica.html">politica de privacidade</a>
 	</div>
-
-
-</div>
-
-
-
-<a href="./politica.html">politica de privacidade</a>
-</div>
 </body>
+
 </html>

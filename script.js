@@ -116,11 +116,11 @@ function deleteTime(id) {
   showTimes();
 }
 
-function record() {
-  if (s <= sR) {
+// function record() {
+//   if (s <= sR) {
 
-  }
-  record = minR + ":" + sR + ":" + mlR;
-  var recordTime = document.getElementById("recordTime");
-  recordTime.innerHTML = record;
-}
+//   }
+//   record = minR + ":" + sR + ":" + mlR;
+//   var recordTime = document.getElementById("recordTime");
+//   recordTime.innerHTML = record;
+// }
