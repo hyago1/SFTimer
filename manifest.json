@@ -36,5 +36,11 @@
 
     }
   ],
-  "shortcuts": []
+  "shortcuts": [
+    {
+      "name": "politica de privacidade",
+      "url": "https://sftimer.vercel.app/politica.html",
+      "description": "link para politica de privacidade"
+    }
+  ]
 }
