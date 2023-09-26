@@ -43,6 +43,8 @@ body {
   height: 100%;
   list-style: none;
   color: rgba(240, 248, 255, 0.795);
+  -webkit-mask-image: linear-gradient(180deg, transparent, red);
+
 }
 .times {
   display: flex;
@@ -93,6 +95,7 @@ li {
   padding-left: 7px;
 
 }
+
 
 .iconDelete {
   color: aqua;
@@ -147,6 +150,10 @@ span {
   background-color: #77777744;
 }
 
+a{
+  position: fixed;
+  bottom: 10px;
+}
 
 
 @media screen and (orientation: portrait) {
