@@ -43,8 +43,7 @@ body {
   height: 100%;
   list-style: none;
   color: rgba(240, 248, 255, 0.795);
-  -webkit-mask-image: linear-gradient(180deg, transparent, red);
-
+  
 }
 .times {
   display: flex;
