@@ -1,9 +1,13 @@
 // var
 var time;
 var run = false;
+var firstRecord = false;
 var ml = 0;
 var s = 0;
 var min = 0;
+var mlR = 0;
+var sR = 0;
+var minR = 0;
 var timeStoped = "";
 var solves = [];
 var average3 = [];
@@ -84,10 +88,37 @@ function addTimeInArray() {
 
   timeStoped = min + ":" + s + ":" + ml;
   numberSolves++;
+
+//recorde
+if (!firstRecord) {
+    minR = min;
+    sR = s;
+    mlR = ml
+
+ record = minR + ":" + sR + ":" + mlR
+ firstRecord = true
+  }
+
+
+if (s < sR) {
+  sR = s
+  mlR = ml
+  minR = min
+
+  record = minR + ":" + sR + ":" + mlR
+}else if ((s == sR)&&(ml < mlR) ) {
+  sR = s
+  mlR = ml
+  minR = min
+
+ record = minR + ":" + sR + ":" + mlR
+}
+//recorde
+
   solves.push(timeStoped)
   average3.push(timeStoped)
   timeStoped = "";
-
+  document.getElementById("record").innerHTML = record;
   showTimes();
 }
 
@@ -116,11 +147,3 @@ function deleteTime(id) {
   showTimes();
 }
 
-// function record() {
-//   if (s <= sR) {
-
-//   }
-//   record = minR + ":" + sR + ":" + mlR;
-//   var recordTime = document.getElementById("recordTime");
-//   recordTime.innerHTML = record;
-// }
